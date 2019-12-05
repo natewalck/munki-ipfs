@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.Puppet-Agent</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>support/Puppetlabs/Puppet</string>
+		<key>NAME</key>
+		<string>Puppet-Agent</string>
+		<key>OS_VERSION</key>
+		<string>10.12</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Puppet is a configuration management solution that allows you to define the state of your IT infrastructure, and then automatically enforces the desired state</string>
+			<key>developer</key>
+			<string>Puppetlabs</string>
+			<key>display_name</key>
+			<string>Puppet Agent</string>
+			<key>maximum_os_version</key>
+			<string>%OS_VERSION%.99</string>
+			<key>minimum_os_version</key>
+			<string>%OS_VERSION%.0</string>
+			<key>name</key>
+			<string>PuppetAgent</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.puppet-agent</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>PuppetlabsProductsURLProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8574c91661dc067f31a486239fd8f5685c6f4fa0</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Puppetlabs/PuppetlabsProductsURLProvider.py</string>
+				<key>sha256_hash</key>
+				<string>f327c3286ddba168789a4c39b5d9eb8abdbeedaff3d1dd98f4681096f19701d5</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.puppet-agent</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Puppetlabs/Puppet-Agent.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>c08d48686059c18ffb55790723f9034573045efcbf54e8a9e757ad5c39204be9</string>
+			</dict>
+			<key>com.github.autopkg.munki.puppet-agent</key>
+			<dict>
+				<key>git_hash</key>
+				<string>1813110883953cb4cdcc4758d15a64463ba28048</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Puppetlabs/Puppet-Agent.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>1f2da96afe5adbaba121524cc6f4fd82408193a91298158943d7a2bc87297be5</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.Facter</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>support/Puppetlabs/Facter</string>
+		<key>NAME</key>
+		<string>Facter</string>
+		<key>VERSION</key>
+		<string>latest</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>Facter is an independent, cross-platform Ruby library designed to gather information on all the nodes you will managing with Puppet.</string>
+			<key>display_name</key>
+			<string>%NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.facter</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>PuppetlabsProductsURLProvider</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8574c91661dc067f31a486239fd8f5685c6f4fa0</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Puppetlabs/PuppetlabsProductsURLProvider.py</string>
+				<key>sha256_hash</key>
+				<string>f327c3286ddba168789a4c39b5d9eb8abdbeedaff3d1dd98f4681096f19701d5</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.facter</key>
+			<dict>
+				<key>git_hash</key>
+				<string>55e47128864841e568cf20ccd2b852fea48faa50</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Puppetlabs/Facter.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>7579a3c2217bbdc582e0f42d2908389c642c7a94dac96b61dd8244fb74f89031</string>
+			</dict>
+			<key>com.github.autopkg.munki.facter</key>
+			<dict>
+				<key>git_hash</key>
+				<string>bb3749974a0b8caf04b0537ba14c2cff37d6886f</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/Puppetlabs/Facter.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>e560ed2fca41c34eae3e36249e465be74f05c0f4fd52978fe9e62c7d31f8ee46</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

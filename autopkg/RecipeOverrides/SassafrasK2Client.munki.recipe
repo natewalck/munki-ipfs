@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.SassafrasK2Client</string>
+	<key>Input</key>
+	<dict>
+		<key>K2CLIENTCONFIG_OPTIONS</key>
+		<string>-s 2 -h keyserver.my.org -g yes -c yes -l yes</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>support/Sassafras/K2Client</string>
+		<key>NAME</key>
+		<string>K2Client</string>
+		<key>REVISION</key>
+		<string>74</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>RestartAction</key>
+			<string>RequireRestart</string>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>description</key>
+			<string>This is the client for the Sassafras KeyServer licensing managing software.</string>
+			<key>display_name</key>
+			<string>KeyClient</string>
+			<key>name</key>
+			<string>%NAME%</string>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.autopkg.munki.sassafras-k2client</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>SassafrasK2ClientCustomizer</key>
+			<dict>
+				<key>git_hash</key>
+				<string>8574c91661dc067f31a486239fd8f5685c6f4fa0</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/SassafrasK2Client/SassafrasK2ClientCustomizer.py</string>
+				<key>sha256_hash</key>
+				<string>440ab244ab6d00d010f50502b9afb423b49087581ada949fbf1ac03558e69976</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.autopkg.download.sassafras-k2client</key>
+			<dict>
+				<key>git_hash</key>
+				<string>b95c7545b9a3e6eca6eb48fde45ff9f9fd2ca2c2</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/SassafrasK2Client/SassafrasK2Client.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>67f9f606c592f7a21e30e864a0021e8e933821f811bed9bd7657c0d12bb5e2cd</string>
+			</dict>
+			<key>com.github.autopkg.munki.sassafras-k2client</key>
+			<dict>
+				<key>git_hash</key>
+				<string>216f87c40bc88503c25de682cb9664371e7741d3</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.recipes/SassafrasK2Client/SassafrasK2Client.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>7f452e013cbeda779e245ed835a625d779514544b047eb97295e4ddb73e62eb1</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

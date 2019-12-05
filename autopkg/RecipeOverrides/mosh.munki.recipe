@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.mosh</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>utils/Mosh</string>
+		<key>NAME</key>
+		<string>Mosh</string>
+		<key>PRERELEASES</key>
+		<string>True</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>Developer Tools</string>
+			<key>developer</key>
+			<string>MIT</string>
+			<key>display_name</key>
+			<string>Mosh</string>
+			<key>minimum_os_version</key>
+			<string>10.6</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.facebook.autopkg.munki.mosh</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>MoshVersioner</key>
+			<dict>
+				<key>git_hash</key>
+				<string>22d5578c76c87835ad3310ef4eaa29d2c85e9d30</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Mosh/MoshVersioner.py</string>
+				<key>sha256_hash</key>
+				<string>1248a1764a92dbc8d03a0363cb200de05dc06a93ec97da08b66163a1e068026e</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.facebook.autopkg.download.mosh</key>
+			<dict>
+				<key>git_hash</key>
+				<string>15dba4a03729cd2d0c4fbc0372817e3a2c80e50d</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Mosh/mosh.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>e5ac0593d3463b8404fae39f48a9120269850cb048489194b3e51de9db6e762b</string>
+			</dict>
+			<key>com.facebook.autopkg.munki.mosh</key>
+			<dict>
+				<key>git_hash</key>
+				<string>15dba4a03729cd2d0c4fbc0372817e3a2c80e50d</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Mosh/mosh.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>bfa17cadf59deedffb8e60ee9a2580a4f1333522e783f9c462023ecd185d5a99</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
