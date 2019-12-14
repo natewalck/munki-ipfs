@@ -29,9 +29,11 @@ echo "Adding natewalck recipes..."
 autopkg repo-add https://github.com/natewalck/natewalck-recipes
 echo "Adding facebook recipes..."
 autopkg repo-add https://github.com/facebook/Recipes-for-AutoPkg
+echo "Adding hjuutilainen recipes..."
+autopkg repo-add https://github.com/autopkg/hjuutilainen-recipes
 
 # Initialize ipfs
-ipfs init
+/usr/bin/sudo -H -u ipfs /usr/local/bin/ipfs init
 
 # Good to go
 echo "To get started, run /Users/Shared/autopkg/autopkg_runner.sh"
