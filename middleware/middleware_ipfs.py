@@ -3,23 +3,35 @@ import os
 
 IPFS_REPO = "/var/ipfs/.ipfs"
 
+
 def process_request_options(options):
     """Process request options passed by munki"""
-    print("***Requesting: {}".format(options.get("url")))
     if not is_pkg_url(options.get("url")) or not is_ipfs_healthy():
         return options
     else:
-        print("***Do IPFS stuff")
+        print("    IPFS Middleware: Processing request for: {}".format(options.get("url")))
         pkginfo = options.get("pkginfo")
-        cid = pkginfo["ipfs_cid"]
-        item_name = os.path.basename(pkginfo["installer_item_location"])
-        if exists_in_ipfs(cid):
-            ## Get it from ipfs
-            # Mutate options to use IPFS wrapper url
-            print("***It exists in IPFS!!!")
-            print(item_name)
-            return options
+        if "ipfs_cid" in pkginfo.keys():
+            cid = pkginfo["ipfs_cid"]
+            item_name = os.path.basename(pkginfo["installer_item_location"])
+            if exists_in_ipfs(cid):
+                ## Get it from ipfs
+                print(
+                    "    IPFS Middleware: Found item {} with CID {}".format(item_name, cid)
+                )
+                options["url"] = "http://127.0.0.1:8080/ipfs/{}/{}".format(
+                    cid, item_name
+                )
+                print("    IPFS Middleware: New url is: {}".format(options.get("url")))
+                return options
+            else:
+                return options
         else:
+            print(
+                "    IPFS Middleware: Not found in IPFS, falling back to {}...".format(
+                    options.get("url")
+                )
+            )
             return options
 
 
@@ -41,7 +53,11 @@ def exists_in_ipfs(cid):
         proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         (_, _) = proc.communicate()
     except OSError as err:
-        print("ipfs add failed with error code {}: {}".format(err.errno, err.strerror))
+        print(
+            "    IPFS Middleware: ipfs file stat failed with error code {}: {}".format(
+                err.errno, err.strerror
+            )
+        )
         return False
     # If we get anything other than 0, it wasn't a successful stat
     if proc.returncode == 0:
@@ -69,7 +85,11 @@ def is_ipfs_running():
         proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         (output, err_out) = proc.communicate()
     except OSError as err:
-        print("ipfs add failed with error code {}: {}".format(err.errno, err.strerror))
+        print(
+            "    IPFS Middleware: IPFS service check failed with error code {}: {}".format(
+                err.errno, err.strerror
+            )
+        )
 
     if b"ai.protocol.ipfs" in output:
         return True
