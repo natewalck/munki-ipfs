@@ -39,7 +39,7 @@
 		<key>MUNKITOOLS_LAUNCHD_NAME</key>
 		<string>munkitools_launchd</string>
 		<key>MUNKI_CATALOG</key>
-		<string>development</string>
+		<string>production</string>
 		<key>MUNKI_CATEGORY</key>
 		<string>munkitools</string>
 		<key>MUNKI_DEVELOPER</key>

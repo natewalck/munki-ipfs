@@ -16,7 +16,7 @@
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>production</string>
 			</array>
 			<key>description</key>
 			<string>OmniDiskSweeper shows you the files on your drive, in descending order by size, and letting you decide what to do with them. Delete away, but exercise caution.</string>
