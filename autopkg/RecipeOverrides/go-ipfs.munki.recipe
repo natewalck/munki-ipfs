@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.munki.go-ipfs</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>MUNKI_DEVELOPER</key>
+		<string>Protocol Labs</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/protocollabs</string>
+		<key>NAME</key>
+		<string>go-ipfs</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>production</string>
+			</array>
+			<key>category</key>
+			<string>Utilities</string>
+			<key>description</key>
+			<string>InterPlanetary File System is a protocol and peer-to-peer network for storing and sharing data in a distributed file system.</string>
+			<key>developer</key>
+			<string>Protocol Labs</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+			<key>unattended_uninstall</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.github.natewalck.munki.go-ipfs</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>io.github.hjuutilainen.SharedProcessors/ChecksumVerifier</key>
+			<dict>
+				<key>git_hash</key>
+				<string>84e2884cfac7aaed5d34ac55ff8a7b97f2784741</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.autopkg.hjuutilainen-recipes./SharedProcessors/ChecksumVerifier.py</string>
+				<key>sha256_hash</key>
+				<string>3d79f4dd0e30d616daf0a4f0376b219243280592d943298899594850f6f9fe64</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.github.natewalck.download.go-ipfs</key>
+			<dict>
+				<key>git_hash</key>
+				<string>def79f1f78e5804e53c2a58513d5feeb1250c04e</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.natewalck.natewalck-recipes/ProtocolLabs/go-ipfs.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>90429926e1d12c5f4091e9dfe38a57ddfe203080ae484cc7c4770a9ed7c4c873</string>
+			</dict>
+			<key>com.github.natewalck.munki.go-ipfs</key>
+			<dict>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.natewalck.natewalck-recipes/ProtocolLabs/go-ipfs.munki.recipe</string>
+				<key>sha256_hash</key>
+				<string>f3a9e77741f189f59549309b3829d6aa68057c0aae1e0fee2b4f3f0493a2bb59</string>
+			</dict>
+			<key>com.github.natewalck.pkg.go-ipfs</key>
+			<dict>
+				<key>git_hash</key>
+				<string>def79f1f78e5804e53c2a58513d5feeb1250c04e</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.natewalck.natewalck-recipes/ProtocolLabs/go-ipfs.pkg.recipe</string>
+				<key>sha256_hash</key>
+				<string>84e0b02cde12e5bf8a3f5e2043445dc654b64f948dba060f3c6ce8398c61952a</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

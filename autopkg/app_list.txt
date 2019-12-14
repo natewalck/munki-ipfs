@@ -26,3 +26,4 @@ Xcode.munki
 mosh.munki
 munkitools3.munki
 munkitools4.munki
+go-ipfs.munki
