@@ -20,7 +20,7 @@
 			<string>RequireRestart</string>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>production</string>
 			</array>
 			<key>description</key>
 			<string>This is the client for the Sassafras KeyServer licensing managing software.</string>

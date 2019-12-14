@@ -16,7 +16,7 @@
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>production</string>
 			</array>
 			<key>description</key>
 			<string>Evernote makes it easy to remember things big and small from your everyday life using your computer, phone, tablet and the web.</string>
